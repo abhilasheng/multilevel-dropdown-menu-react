@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+Steps I have used to create this navigation.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Step1. React Router Dom installation
 
-## Available Scripts
+npm install react-router-dom@latest
 
-In the project directory, you can run:
+### Step2.verify the package.json is updated with react-router-dom in dependency
 
-### `npm start`
+### start the server
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+npm start
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Step3. Import BrowserRouter
 
-### `npm test`
+open index.js and import BrowserRouter from react-router-dom
+and wrap the <app> with <BrowserRouter></BrowserRouter>
+it will appear like
+<BrowserRouter>
+<App />
+</BrowserRouter>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Step4. Add few sample page
 
-### `npm run build`
+I have created Home.js, Page1.js, Page2.js and Page3.js for the respective page with react arrow function using racfe short key in components folder in src folder
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Step5. Modify app.js
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+import Routes and Route in app.js file
+removed the readymade code placed in return and added <Routes></Routes>
+add <Route></Route> for different pages like home page , page1, page2 and page3
+set path='/' for main page
+and path = 'pagename' for other pages
+you can add as many pages as you can and set its route in app.js same as mentioned above.
+you should add element={} for respective Route so that it can get the value of respective page
+make sure the components are imported on the top of app.js
+for ex: for home page the routes will look like
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+import Home from './components/Home'
+...
+<Route path='/' element={<Home />}></Route>
+...
 
-### `npm run eject`
+### Step6. create navigation bar
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Create a Navigator component as Navigator.js
+set the navigation html code within Nav tag
+and replace a tag with NavLink tag
+import {Navlink} from 'react-router-dom'
+you will get the active class property with NavLink hence we have used NavLink instead of Link
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+import this Navigator component in app.js and
+add <Navigator /> just above the <Routes>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+-- to be continued --
